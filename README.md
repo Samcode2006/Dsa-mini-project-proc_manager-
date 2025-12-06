@@ -294,20 +294,6 @@ The program handles the following error scenarios:
 
 ---
 
-## Data Structure Learning Outcomes
-
-By studying this project, you will learn:
-
-• Singly Linked List fundamentals  
-• Dynamic Memory Allocation using malloc/free  
-• Pointer Manipulation with double pointers  
-• System Integration with OS commands  
-• Signal Handling for process termination  
-• Memory Leak Prevention techniques  
-• Color-Coded Output using ANSI codes  
-
----
-
 ## File Structure
 
 ```

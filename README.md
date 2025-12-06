@@ -353,84 +353,14 @@ DSA-Mini-Project/
 
 ---
 
-## Contributing
-
-This is an educational mini project. Feel free to:
-- Fork the repository
-- Improve the code
-- Add new features
-- Report bugs or issues
-- Submit pull requests
-
----
-
 ## License
 
 This project is created for **educational purposes** as part of a DSA (Data Structures and Algorithms) mini project.
 
 ---
 
-## Author
-
-**Team**: Samarth S Team  
-**Repository**: [GitHub - Dsa-mini-project-proc_manager-](https://github.com/Samcode2006/Dsa-mini-project-proc_manager-)
-
----
-
-## Support & Feedback
-
-If you have any questions or suggestions, feel free to:
-- Open an issue on GitHub
-- Submit a pull request with improvements
-- Contact the development team
-
----
-
 <div align="center">
 
 Made with dedication by the Development Team
-
-</div>
-
----
-
-## 🤝 Contributing
-
-This is an educational mini project. Feel free to:
-- Fork the repository
-- Improve the code
-- Add new features
-- Report bugs or issues
-- Submit pull requests
-
----
-
-## 📝 License
-
-This project is created for **educational purposes** as part of a DSA (Data Structures and Algorithms) mini project.
-
----
-
-## 👥 Author
-
-**Team**: Samarth S Team  
-**Repository**: [GitHub - Dsa-mini-project-proc_manager-](https://github.com/Samcode2006/Dsa-mini-project-proc_manager-)
-
----
-
-## 📞 Support & Feedback
-
-If you have any questions or suggestions, feel free to:
-- Open an issue on GitHub
-- Submit a pull request with improvements
-- Contact the development team
-
----
-
-<div align="center">
-
-### ⭐ If you found this helpful, please give it a star! ⭐
-
-**Made with ❤️ by the Development Team**
 
 </div>

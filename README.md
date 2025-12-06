@@ -38,7 +38,7 @@ Each node represents a single process with:
 
 ## Functions Explanation
 
-### 1. **createNode(int pid, char *name)**
+### 1. createNode(int pid, char *name)
 **Purpose**: Creates a new process node and allocates memory for it.
 
 **Parameters**:
@@ -55,7 +55,7 @@ Each node represents a single process with:
 
 ---
 
-### 2. **appendProcess(ProcessNode **head, int pid, char *name)**
+### 2. appendProcess(ProcessNode **head, int pid, char *name)
 **Purpose**: Adds a new process node to the end of the linked list.
 
 **Parameters**:
@@ -73,7 +73,7 @@ Each node represents a single process with:
 
 ---
 
-### 3. **freeList(ProcessNode *head)**
+### 3. freeList(ProcessNode *head)
 **Purpose**: Deallocates all memory used by the linked list.
 
 **Parameters**:
@@ -89,7 +89,7 @@ Each node represents a single process with:
 
 ---
 
-### 4. **deleteNode(ProcessNode **head, int pid)**
+### 4. deleteNode(ProcessNode **head, int pid)
 **Purpose**: Removes a specific node from the linked list by PID.
 
 **Parameters**:
@@ -109,7 +109,7 @@ Each node represents a single process with:
 
 ---
 
-### 5. **refreshProcessList(ProcessNode **head)**
+### 5. refreshProcessList(ProcessNode **head)
 **Purpose**: Reads current system processes and rebuilds the linked list.
 
 **Parameters**:
@@ -128,7 +128,7 @@ Each node represents a single process with:
 
 ---
 
-### 6. **printProcesses(ProcessNode *head)**
+### 6. printProcesses(ProcessNode *head)
 **Purpose**: Displays all processes in the linked list in a formatted table.
 
 **Parameters**:
@@ -145,7 +145,7 @@ Each node represents a single process with:
 
 ---
 
-### 7. **killProcessOperation(ProcessNode **head)**
+### 7. killProcessOperation(ProcessNode **head)
 **Purpose**: Terminates a process and removes it from the linked list.
 
 **Parameters**:
@@ -166,7 +166,7 @@ Each node represents a single process with:
 
 ---
 
-### 8. **main()**
+### 8. main()
 **Purpose**: Main program loop that provides the user interface.
 
 **Returns**: 0 on successful exit

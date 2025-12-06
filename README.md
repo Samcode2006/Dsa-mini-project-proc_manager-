@@ -261,39 +261,6 @@ Goodbye!
 
 ---
 
-## System Requirements
-
-| Requirement | Details |
-|------------|---------|
-| **OS** | Linux/Unix-based systems |
-| **Compiler** | GCC or compatible C compiler |
-| **Command** | `ps` command must be available |
-| **Privileges** | May need sudo for terminating other users' processes |
-| **Libraries** | Standard C libraries |
-
----
-
-## Time & Space Complexity Analysis
-
-### Time Complexity
-
-| Operation | Complexity | Remarks |
-|-----------|-----------|---------|
-| Create Node | O(1) | Constant - Single allocation |
-| Append Process | O(n) | Linear - Must traverse to end |
-| Delete Node | O(n) | Linear - Must search for node |
-| Free List | O(n) | Linear - Must free each node |
-| Print Processes | O(n) | Linear - Must traverse all nodes |
-| Refresh List | O(n) | Linear - Read all processes |
-
-### Space Complexity
-
-- **Overall**: O(n) where n is the number of processes
-- **Per Node**: O(256) for process name + O(1) for pid and pointer = O(1) per node
-- **Total Memory**: O(n × 256) ≈ O(n)
-
----
-
 ## Algorithm Overview
 
 ### Linked List Operations Flow

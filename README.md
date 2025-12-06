@@ -1,10 +1,21 @@
 # DSA Mini Project - C Process Manager
 
+<div align="center">
+
+![C](https://img.shields.io/badge/Language-C-blue?style=for-the-badge&logo=c)
+![Data Structure](https://img.shields.io/badge/Data%20Structure-Linked%20List-green?style=for-the-badge)
+![Platform](https://img.shields.io/badge/Platform-Linux%2FUnix-orange?style=for-the-badge)
+![License](https://img.shields.io/badge/License-Educational-yellow?style=for-the-badge)
+
 A command-line process manager application written in C that demonstrates the practical application of **Linked Lists** data structure for managing system processes.
+
+</div>
+
+---
 
 ## Project Overview
 
-This project implements a process management system using a singly linked list to store and manipulate running system processes. It provides functionalities to list, refresh, and terminate processes with a user-friendly menu interface.
+This project implements a robust process management system using a **singly linked list** to store and manipulate running system processes. It provides functionalities to list, refresh, and terminate processes with an intuitive menu-driven interface and color-coded output for enhanced user experience.
 
 ## Data Structure
 
@@ -22,6 +33,8 @@ Each node represents a single process with:
 - **pid**: The unique process identifier
 - **name**: The process/command name
 - **next**: Pointer to the next node in the linked list
+
+---
 
 ## Functions Explanation
 
@@ -170,40 +183,51 @@ Each node represents a single process with:
 - Continues running until user selects exit option
 - Properly cleans up memory before exiting
 
-## Features
+## Key Features
 
-✅ **Linked List Implementation**: Uses singly linked list for dynamic process storage
-✅ **System Integration**: Reads real-time processes from the operating system
-✅ **Process Termination**: Kill processes with proper signal handling
-✅ **Color-Coded Output**: ANSI color codes for better user experience
-✅ **Memory Management**: Proper allocation and deallocation of memory
-✅ **Error Handling**: Handles invalid inputs and system errors gracefully
+✓ Linked List Implementation - Uses singly linked list for dynamic process storage  
+✓ System Integration - Reads real-time processes from the operating system  
+✓ Process Termination - Kill processes with proper signal handling  
+✓ Color-Coded Output - ANSI color codes for better user experience  
+✓ Memory Management - Proper allocation and deallocation of memory  
+✓ Error Handling - Handles invalid inputs and system errors gracefully  
+✓ Interactive Menu - User-friendly command-line interface  
+
+---
 
 ## Color Codes Used
 
-- **RED**: Error messages and exit option
-- **GREEN**: Success messages and list options
-- **YELLOW**: Warning messages and user input prompts
-- **BLUE**: Headers and borders
-- **CYAN**: Main menu title and process information headers
+| Color | Usage |
+|-------|-------|
+| **RED** | Error messages and exit option |
+| **GREEN** | Success messages and list options |
+| **YELLOW** | Warning messages and user input prompts |
+| **BLUE** | Headers and borders |
+| **CYAN** | Main menu title and process information |
 
-## Compilation
+---
+
+## Quick Start
+
+### Prerequisites
+- GCC compiler
+- Linux/Unix system
+- `ps` command available
+
+### Compilation & Execution
 
 ```bash
+# Compile the program
 gcc proc_manager.c -o proc_manager
-```
 
-## Execution
-
-```bash
+# Run normally
 ./proc_manager
-```
 
-**Note**: On Linux/Unix systems, you may need root/sudo privileges to kill processes owned by other users.
-
-```bash
+# Run with sudo (recommended)
 sudo ./proc_manager
 ```
+
+---
 
 ## Usage Example
 
@@ -221,39 +245,192 @@ Enter choice: 1
 PID        NAME
 -----------------------------------
 1          init
-2          kthreadd
+42         kthreadd
+150        kworker/0:1
 ...
+-----------------------------------
+
+Enter choice: 3
+Enter PID to kill: 150
+Successfully sent KILL signal to PID 150.
+Removed PID 150 from Process List.
+
+Enter choice: 4
+Goodbye!
 ```
+
+---
 
 ## System Requirements
 
-- **OS**: Linux/Unix-based systems (requires `ps` command)
-- **Compiler**: GCC or compatible C compiler
-- **Dependencies**: Standard C libraries (stdio.h, stdlib.h, string.h, unistd.h, signal.h, errno.h)
+| Requirement | Details |
+|------------|---------|
+| **OS** | Linux/Unix-based systems |
+| **Compiler** | GCC or compatible C compiler |
+| **Command** | `ps` command must be available |
+| **Privileges** | May need sudo for terminating other users' processes |
+| **Libraries** | Standard C libraries |
 
-## Time Complexity
+---
 
-| Operation | Time Complexity |
+## Time & Space Complexity Analysis
+
+### Time Complexity
+
+| Operation | Complexity | Remarks |
+|-----------|-----------|---------|
+| Create Node | O(1) | Constant - Single allocation |
+| Append Process | O(n) | Linear - Must traverse to end |
+| Delete Node | O(n) | Linear - Must search for node |
+| Free List | O(n) | Linear - Must free each node |
+| Print Processes | O(n) | Linear - Must traverse all nodes |
+| Refresh List | O(n) | Linear - Read all processes |
+
+### Space Complexity
+
+- **Overall**: O(n) where n is the number of processes
+- **Per Node**: O(256) for process name + O(1) for pid and pointer = O(1) per node
+- **Total Memory**: O(n × 256) ≈ O(n)
+
+---
+
+## Algorithm Overview
+
+### Linked List Operations Flow
+
+```
+[Head] -> [Node1] -> [Node2] -> [Node3] -> ... -> [NodeN] -> [NULL]
+  |pid,name|  |pid,name|  |pid,name|             |pid,name|
+```
+
+### Process Management Workflow
+
+1. **Initialization**: Load all system processes into linked list
+2. **Display**: Traverse list and print all processes
+3. **Search**: Traverse to find specific PID
+4. **Delete**: Remove node and maintain list integrity
+5. **Refresh**: Clear old list and rebuild from OS
+
+---
+
+## Error Handling
+
+The program handles the following error scenarios:
+
+| Error Type | Handling Method |
 |-----------|-----------------|
-| Create Node | O(1) |
-| Append Process | O(n) |
-| Delete Node | O(n) |
-| Free List | O(n) |
-| Print Processes | O(n) |
-| Refresh List | O(n) |
+| Memory Allocation Failure | Returns NULL, displays error message |
+| Invalid PID Input | Shows error, uses strerror() |
+| Permission Denied | Displays permission error, suggests sudo |
+| Process Not Found | Notifies user, continues execution |
+| Invalid Menu Choice | Shows "Invalid choice!" message |
 
-## Space Complexity
+---
 
-- **Space Complexity**: O(n) where n is the number of processes stored in the list
+## Data Structure Learning Outcomes
 
-## Author
+By studying this project, you will learn:
 
-**Team**: Samarth S Team
+• Singly Linked List fundamentals  
+• Dynamic Memory Allocation using malloc/free  
+• Pointer Manipulation with double pointers  
+• System Integration with OS commands  
+• Signal Handling for process termination  
+• Memory Leak Prevention techniques  
+• Color-Coded Output using ANSI codes  
 
-## Version
+---
 
-**Version 1.0** - Initial Release
+## File Structure
+
+```
+DSA-Mini-Project/
+├── proc_manager.c          # Main C source code
+├── proc_manager            # Compiled executable
+├── README.md               # Documentation (this file)
+└── .gitignore             # Git ignore rules
+```
+
+---
+
+## Contributing
+
+This is an educational mini project. Feel free to:
+- Fork the repository
+- Improve the code
+- Add new features
+- Report bugs or issues
+- Submit pull requests
+
+---
 
 ## License
 
-This project is for educational purposes as part of a DSA (Data Structures and Algorithms) mini project.
+This project is created for **educational purposes** as part of a DSA (Data Structures and Algorithms) mini project.
+
+---
+
+## Author
+
+**Team**: Samarth S Team  
+**Repository**: [GitHub - Dsa-mini-project-proc_manager-](https://github.com/Samcode2006/Dsa-mini-project-proc_manager-)
+
+---
+
+## Support & Feedback
+
+If you have any questions or suggestions, feel free to:
+- Open an issue on GitHub
+- Submit a pull request with improvements
+- Contact the development team
+
+---
+
+<div align="center">
+
+Made with dedication by the Development Team
+
+</div>
+
+---
+
+## 🤝 Contributing
+
+This is an educational mini project. Feel free to:
+- Fork the repository
+- Improve the code
+- Add new features
+- Report bugs or issues
+- Submit pull requests
+
+---
+
+## 📝 License
+
+This project is created for **educational purposes** as part of a DSA (Data Structures and Algorithms) mini project.
+
+---
+
+## 👥 Author
+
+**Team**: Samarth S Team  
+**Repository**: [GitHub - Dsa-mini-project-proc_manager-](https://github.com/Samcode2006/Dsa-mini-project-proc_manager-)
+
+---
+
+## 📞 Support & Feedback
+
+If you have any questions or suggestions, feel free to:
+- Open an issue on GitHub
+- Submit a pull request with improvements
+- Contact the development team
+
+---
+
+<div align="center">
+
+### ⭐ If you found this helpful, please give it a star! ⭐
+
+**Made with ❤️ by the Development Team**
+
+</div>
